@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'floadr'
+
+flickr = Flickr.new
+flickr.initialize_api_key()
+photo_id, photo_owner = flickr.get_most_interesting_photo("space")
+puts "photo: %s | from: %s" % [photo_id, photo_owner]

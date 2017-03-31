@@ -27,6 +27,13 @@ class Flickr
     return FlickRaw.api_key
   end
 
+  def get_most_interesting_photo(search_string)
+    sort = "interestingness_desc"
+    photos = flickr.photos.search(:sort => sort, :text => search_string)
+    photo = photos.first
+    return photo.id, photo.owner
+  end
+
   def is_querry_list_long_enough(querry_list)
     list_length = querry_list.length()
     if list_length >= 10
