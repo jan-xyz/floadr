@@ -3,6 +3,7 @@ class Floadr
     @flickr = Flickr.new
     @flickr.initialize_api_key()
     @downloadr = Downloadr.new
+    @downloadr.create_download_dir
   end
 
   def process(input)
