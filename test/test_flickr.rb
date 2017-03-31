@@ -40,4 +40,12 @@ class FlickrTest < Minitest::Test
       @sut.read_api_key()
     end
   end
+
+  def test_initializing_api_key
+    test_key = "test_key_env"
+    ENV["FLICKR_API_KEY"] = test_key
+    @sut.initialize_api_key()
+    key = @sut.get_api_key()
+    assert_equal key, test_key
+  end
 end

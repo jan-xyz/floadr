@@ -6,12 +6,9 @@ class Flickr
     FlickRaw.shared_secret=""
   end
 
-  def set_api_key(api_key)
-    FlickRaw.api_key=api_key
-  end
-
-  def get_api_key()
-    return FlickRaw.api_key
+  def initialize_api_key()
+    api_key = read_api_key()
+    set_api_key(api_key)
   end
 
   def read_api_key()
@@ -20,6 +17,14 @@ class Flickr
       raise "FLICKR_API_KEY environment variable not set"
     end
     return key
+  end
+
+  def set_api_key(api_key)
+    FlickRaw.api_key=api_key
+  end
+
+  def get_api_key()
+    return FlickRaw.api_key
   end
 
   def is_querry_list_long_enough(querry_list)
