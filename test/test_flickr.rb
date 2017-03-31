@@ -3,6 +3,7 @@ require 'floadr'
 
 class FlickrTest < Minitest::Test
   def setup
+    ENV.delete("FLICKR_API_KEY")
     @sut = Flickr.new
   end
 
