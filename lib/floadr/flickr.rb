@@ -28,7 +28,7 @@ class Flickr
   end
 
   def get_most_interesting_photo(search_string)
-    sort = "interestingness_desc"
+    sort = "interestingness_asc"
     photos = flickr.photos.search(:sort => sort, :text => search_string)
     photo = photos.first
     return photo.id, photo.owner
