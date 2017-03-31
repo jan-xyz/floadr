@@ -14,7 +14,12 @@ class Flickr
     return FlickRaw.api_key
   end
 
-  def querry(search_text)
+  def read_api_key()
+    key = ENV["FLICKR_API_KEY"]
+    if key == nil
+      raise "FLICKR_API_KEY environment variable not set"
+    end
+    return key
   end
 
   def is_querry_list_long_enough(querry_list)
