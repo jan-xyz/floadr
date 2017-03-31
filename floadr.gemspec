@@ -13,7 +13,9 @@ Gem::Specification.new do |s|
     "lib/floadr/cropr.rb"
   ]
   s.add_runtime_dependency "flickraw", ["= 0.9.9"]
+  s.add_runtime_dependency "mini_magick", ["= 4.7.0"]
   s.add_development_dependency 'rake', '~> 1.6', '>= 1.6.5'
+  s.add_development_dependency 'minitest', '= 5.10.1'
   s.executables << 'floadr'
   s.homepage    = "http://jan-steinke.de"
   s.license     = 'MIT'
