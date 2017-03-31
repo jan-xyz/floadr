@@ -2,9 +2,5 @@
 
 require 'floadr'
 
-flickr = Flickr.new
-downloadr = Downloadr.new
-flickr.initialize_api_key()
-photo_id, _ = flickr.get_most_interesting_photo("space")
-photo_url = flickr.get_photo_url(photo_id)
-downloadr.download_image(photo_url)
+floadr = Floadr.new
+floadr.process("cat")
