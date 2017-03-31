@@ -14,6 +14,7 @@ class Downloadr
          file.puts f.read
        end
     }
+    return full_file_path
   end
 
   def create_download_dir

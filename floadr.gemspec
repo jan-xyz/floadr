@@ -9,7 +9,9 @@ Gem::Specification.new do |s|
   s.files       = [
     "lib/floadr.rb",
     "lib/floadr/flickr.rb",
-    "lib/floadr/downloadr.rb"]
+    "lib/floadr/downloadr.rb",
+    "lib/floadr/cropr.rb"
+  ]
   s.add_runtime_dependency "flickraw", ["= 0.9.9"]
   s.add_development_dependency 'rake', '~> 1.6', '>= 1.6.5'
   s.executables << 'floadr'
