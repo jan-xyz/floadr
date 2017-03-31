@@ -34,6 +34,12 @@ class Flickr
     return photo.id, photo.owner
   end
 
+  def get_photo_url(photo_id)
+    info = flickr.photos.getInfo(:photo_id => photo_id)
+    photo_url = FlickRaw.url_b(info)
+    return photo_url
+  end
+
   def is_querry_list_long_enough(querry_list)
     list_length = querry_list.length()
     if list_length >= 10

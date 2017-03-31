@@ -4,5 +4,6 @@ require 'floadr'
 
 flickr = Flickr.new
 flickr.initialize_api_key()
-photo_id, photo_owner = flickr.get_most_interesting_photo("space")
-puts "photo: %s | from: %s" % [photo_id, photo_owner]
+photo_id, _ = flickr.get_most_interesting_photo("space")
+photo_url = flickr.get_photo_url(photo_id)
+puts photo_url
