@@ -27,11 +27,32 @@ class Flickr
     return FlickRaw.api_key
   end
 
+  def get_random_image_id()
+    random_image_id = nil
+    while random_image_id == nil
+      search_term = get_random_search_term
+      random_image_id = get_most_interesting_photo(search_term)
+    end
+    return random_image_id
+  end
+
+  def get_random_search_term()
+    chosen_line = nil
+    File.foreach("/usr/share/dict/words").each_with_index do |line, number|
+      chosen_line = line if rand < 1.0/(number+1)
+    end
+    return chosen_line
+  end
+
   def get_most_interesting_photo(search_string)
     sort = "interestingness_asc"
     photos = flickr.photos.search(:sort => sort, :text => search_string)
     photo = photos.first
-    return photo.id, photo.owner
+    if photo == nil
+      return nil
+    else
+      return photo.id
+    end
   end
 
   def get_photo_url(photo_id)
