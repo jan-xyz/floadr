@@ -18,8 +18,8 @@ class Floadr
     @image_list << cropped_file
   end
 
-  def build()
-    @assemblr.combine_images(@image_list, "out2.jpg")
+  def build(output_file)
+    @assemblr.combine_images(@image_list, output_file)
   end
 end
 
