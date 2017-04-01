@@ -14,5 +14,6 @@ gem install floadr-*.gem
 
 ## Usage
 ```shell
+export FLICKR_API_KEY=<API-KEY>
 floadr --search-term cat,dog,house,elephant,car,bucket --output-file out4.jpg
 ```
