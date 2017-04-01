@@ -10,8 +10,24 @@ class Floadr
     @image_list = []
   end
 
-  def process(input)
-    photo_id, _ = @flickr.get_most_interesting_photo(input)
+  def get_ten_images(search_terms)
+    id_list = []
+    for search_term in search_terms
+      photo_id = @flickr.get_most_interesting_photo(search_term)
+      if not photo_id == nil
+        id_list << photo_id
+      end
+    end
+    difference = 10 - id_list.length
+    difference.times do
+      id_list << @flickr.get_random_image_id
+    end
+    for id in id_list
+      process(id)
+    end
+  end
+
+  def process(photo_id)
     photo_url = @flickr.get_photo_url(photo_id)
     file_path = @downloadr.download_image(photo_url)
     cropped_file = @cropr.crop_image(file_path)

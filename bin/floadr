@@ -1,22 +1,18 @@
 #!/usr/bin/env ruby
 
 require 'floadr'
-
 require 'optparse'
 
 options = {}
+options[:search_terms] = ""
 OptionParser.new do |opt|
   opt.on('--search-terms TERMS') { |o| options[:search_terms] = o }
   opt.on('--output-file OUTPUTFILE') { |o| options[:output_file] = o }
 end.parse!
 
-puts options
+floadr = Floadr.new
 
 split_search_terms = options[:search_terms].split(',')
 
-
-floadr = Floadr.new
-for search_term in split_search_terms
-  floadr.process(search_term)
-end
+floadr.get_ten_images(split_search_terms)
 floadr.build(options[:output_file])

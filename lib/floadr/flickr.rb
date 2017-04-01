@@ -69,6 +69,4 @@ class Flickr
       return false
     end
   end
-
-
 end
