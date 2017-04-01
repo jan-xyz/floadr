@@ -10,6 +10,7 @@ OptionParser.new do |opt|
   opt.on('-o','--output-file OUTPUTFILE') { |o| options[:output_file] = o }
 end.parse!
 
+raise OptionParser::MissingArgument if options[:output_file].nil?
 floadr = Floadr.new
 
 split_search_terms = options[:search_terms].split(',')
