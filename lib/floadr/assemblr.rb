@@ -6,6 +6,7 @@ class Assemblr
     MiniMagick::Tool::Montage.new do |montage|
       montage.geometry '+0+0'
       montage.background 'none'
+      montage.tile '5x2'
       for image in image_list
         montage << image
       end
