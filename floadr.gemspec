@@ -10,7 +10,8 @@ Gem::Specification.new do |s|
     "lib/floadr.rb",
     "lib/floadr/flickr.rb",
     "lib/floadr/downloadr.rb",
-    "lib/floadr/cropr.rb"
+    "lib/floadr/cropr.rb",
+    "lib/floadr/assemblr.rb"
   ]
   s.add_runtime_dependency "flickraw", ["= 0.9.9"]
   s.add_runtime_dependency "mini_magick", ["= 4.7.0"]

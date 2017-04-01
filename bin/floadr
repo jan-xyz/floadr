@@ -4,3 +4,8 @@ require 'floadr'
 
 floadr = Floadr.new
 floadr.process("cat")
+floadr.process("space")
+floadr.process("jan")
+floadr.process("unicorn")
+floadr.process("ice cream")
+floadr.build
