@@ -18,8 +18,8 @@ class Floadr
         id_list << photo_id
       end
     end
-    difference = 10 - id_list.length
-    difference.times do
+    until_ten = 10 - id_list.length
+    until_ten.times do
       id_list << @flickr.get_random_image_id
     end
     for id in id_list
